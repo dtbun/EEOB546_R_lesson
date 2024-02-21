@@ -28,4 +28,20 @@ The `echo: false` option disables the printing of code (only output is displayed
 ```{r}
 a <- c("a",1)
 b <- c(TRUE,1)
+
+is.vector(list(1,2,3))
+is.numeric(c(1L,2L,3L))
+```
+
+```{r}
+c(1, FALSE)
+c("a", 1)
+c(list(1), "a")
+c(TRUE, 1L)
+
+2 < "ten"
+
+
+df <- data.frame()
+
 ```
