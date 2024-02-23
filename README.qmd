@@ -1,3 +1,5 @@
 Hello I am a readme file for the EEOB546 R Lesson project folder!
 In this folder we should have the R lesson inclass and homework activities.
 Best of luck!
+
+test commit change push
