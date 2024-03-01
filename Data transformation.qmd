@@ -75,3 +75,16 @@ le100
 
 filter(dvst, Divergence == min(Divergence))
 ```
+
+```{r}
+select(dvst, start, end, Divergence)
+
+
+```
+
+```{r}
+library(tidyverse)
+dvst <- read_csv("https://raw.githubusercontent.com/vsbuffalo/bds-files/master/chapter-08-r/Dataset_S1.txt") %>% 
+  mutate(diversity = Pi / (10*1000), cent = (start >= 25800000 & end <= 29700000)) %>% 
+  rename(percent.GC = `%GC`, total.SNPs = `total SNPs`, total.Bases = `total Bases`, reference.Bases = `reference Bases`)
+```
