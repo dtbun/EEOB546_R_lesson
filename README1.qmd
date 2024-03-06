@@ -9,11 +9,13 @@ editor: visual
 ```{r}
 #snpurl <- "https://github.com/EEOB-BioData/BCB546_Spring2024/blob/29fc8f45a1f28a1376e62ef5fceff9b99cb409d3/assignments/UNIX_Assignment/snp_position.txt"
 
-snp <- read_tsv("C:/Users/danie/OneDrive/Documents/Rassignment/EEOB546_R_lesson/snp_position.txt")
+snp <- read_tsv("snp_position.txt")
 
-view(snp)
+#view(snp)
 
-fang <- read_tsv("C:/Users/danie/OneDrive/Documents/Rassignment/EEOB546_R_lesson/fang_et_al_genotypes.txt")
+fang <- read_tsv("fang_et_al_genotypes.txt")
 
-view(fang)
+#view(fang)
+
+
 ```
