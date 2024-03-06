@@ -19,10 +19,16 @@ if (x >= 10) {
   print("x is greater than or equal to 10")
   } else {
     print("x is not greater than or equal to 10")
-}
+  }
 ```
 
-You can add options to executable code like this
+```{r}
+#z <- 1
+#while (z>0.1) {
+  
+#}
+
+```
 
 ```{r}
 #| echo: false
