@@ -10,7 +10,6 @@ editor: visual
 
 #snpurl <- "https://github.com/EEOB-BioData/BCB546_Spring2024/blob/29fc8f45a1f28a1376e62ef5fceff9b99cb409d3/assignments/UNIX_Assignment/snp_position.txt"
 
-
 library(tidyverse)
 library(tidyr)
 library(data.table)
@@ -22,7 +21,6 @@ snp_f <- arrange(snp[c(1,3,4)], SNP_ID)
 fang <- read_tsv("fang_et_al_genotypes.txt")
 
 maize <- filter(fang, startsWith(Group, 'ZMM')) #filter needs boolean in second arg
-#colnames(maize) <- rownames(maize)
 
 maize_t <- transpose(maize)
 rownames(maize_t) <- colnames(maize)
@@ -39,6 +37,23 @@ for(i in 1:10) {
 }
 
 
+for(i in 1:10) {
+  maize_de <- arrange(filter(maize_snp, Chromosome == i), desc(Position))
+  maize_de[maize_de == '?/?'] <- '-/-'
+  maize_dec <- maize_de
+  write_tsv(maize_dec, sprintf("maize_dec_%d.txt",i))
+}
 
+maize_unknowns <- filter(maize_snp, Chromosome == "unknown")
+write_tsv(maize_unknowns, "maize_unknown.txt")
+
+maize_multiples <- filter(maize_snp, Chromosome =="multiple")
+write_tsv(maize_multiples, "maize_multiple.txt")
+
+```
+
+## Teosinte
+
+```{r}
 
 ```
