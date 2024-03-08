@@ -9,13 +9,24 @@ editor: visual
 ```{r}
 #snpurl <- "https://github.com/EEOB-BioData/BCB546_Spring2024/blob/29fc8f45a1f28a1376e62ef5fceff9b99cb409d3/assignments/UNIX_Assignment/snp_position.txt"
 
+library(tidyverse)
+library(tidyr)
+library(data.table)
+library(dplyr)
+
 snp <- read_tsv("snp_position.txt")
 
-#view(snp)
 
 fang <- read_tsv("fang_et_al_genotypes.txt")
+fang_t <- transpose(fang)
+rownames(fang_t) <- colnames(fang)
+colnames(fang_t) <- rownames(fang)
+setDT(fang_t, keep.rownames = TRUE)
 
-#view(fang)
+#fang_t <- tibble::rownames_to_column(fang_t)
 
+#fang_snp <- left_join(snp, fang_t, by = join_by(gene == rn))
+#view(fang_snp)
 
+maize <- fang_snp[gene %like% "zmm"]
 ```
